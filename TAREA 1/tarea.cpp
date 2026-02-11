@@ -3,7 +3,7 @@
 
 class Juguete {
 private:
-    std::string marca, material; // Atributo 1
+    std::string marca, material; 
     int peso;          
 
 public:
