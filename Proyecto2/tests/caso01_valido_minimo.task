@@ -1,0 +1,5 @@
+TABLERO "Proyecto Minimo" {
+    COLUMNA "Unica Columna" {
+        tarea: "Tarea simple" [prioridad: ALTA, responsable: "Ana", fecha_limite: 2026-05-01]
+    };
+};

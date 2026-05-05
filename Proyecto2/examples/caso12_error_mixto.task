@@ -1,0 +1,7 @@
+TABLERO "Errores Mixtos" {
+    COLUMNA "Col1" {
+        tarea: "Tarea uno" [prioridad: ALTA, responsable: "Ana", fecha_limite: 2026-05-01],
+        tarea: "Sin dos puntos" [prioridad MEDIA, responsable: "Luis", fecha_limite: 2026-05-02]
+    };
+    # comentario invalido
+};

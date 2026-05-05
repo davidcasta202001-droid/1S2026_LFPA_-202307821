@@ -1,0 +1,14 @@
+TABLERO "Kanban Clasico" {
+    COLUMNA "Todo" {
+        tarea: "Planificar sprint" [prioridad: ALTA, responsable: "PM", fecha_limite: 2026-05-02]
+    };
+    COLUMNA "Doing" {
+        tarea: "Desarrollar modulo" [prioridad: ALTA, responsable: "Dev", fecha_limite: 2026-05-09]
+    };
+    COLUMNA "Review" {
+        tarea: "Revisar codigo" [prioridad: MEDIA, responsable: "TL", fecha_limite: 2026-05-10]
+    };
+    COLUMNA "Done" {
+        tarea: "Deploy v1.0" [prioridad: BAJA, responsable: "DevOps", fecha_limite: 2026-05-01]
+    };
+};

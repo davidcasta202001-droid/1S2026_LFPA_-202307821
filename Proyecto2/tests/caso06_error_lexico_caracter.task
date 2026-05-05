@@ -1,0 +1,6 @@
+TABLERO "Prueba Error Lexico" {
+    COLUMNA "Col1" {
+        tarea: "Tarea valida" [prioridad: ALTA, responsable: "Ana", fecha_limite: 2026-05-01]
+    };
+    @ simbolo_invalido
+};

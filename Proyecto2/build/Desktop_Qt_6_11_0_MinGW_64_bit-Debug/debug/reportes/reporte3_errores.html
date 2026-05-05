@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte 3 — Tabla de Errores</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  header .logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #4fc3f7;
+  }
+  header .subtitle { font-size: 13px; color: #90caf9; margin-top: 2px; }
+  .nav-pills {
+    display: flex; gap: 8px; margin: 0 40px; padding: 16px 0;
+  }
+  .nav-pills a {
+    text-decoration: none; padding: 6px 16px; border-radius: 20px;
+    background: #e3f2fd; color: #1565c0; font-size: 13px; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .nav-pills a:hover, .nav-pills a.active {
+    background: #1565c0; color: #fff;
+  }
+  main { padding: 24px 40px 60px; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+  .page-desc { color: #546e7a; font-size: 14px; margin-bottom: 24px; }
+
+  .summary { display:flex; gap:16px; margin-bottom:24px; flex-wrap:wrap; }
+  .chip {
+    padding:12px 20px; border-radius:10px; font-weight:700;
+    box-shadow:0 1px 4px rgba(0,0,0,0.08);
+  }
+  .chip-ok  { background:#e8f5e9; color:#2e7d32; }
+  .chip-lex { background:#fff3e0; color:#e65100; }
+  .chip-syn { background:#fce4ec; color:#c62828; }
+  table { width:100%; border-collapse:collapse; background:#fff;
+    border-radius:12px; overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+  thead { background:#b71c1c; color:#fff; }
+  th { padding:14px 16px; text-align:left; font-size:13px; font-weight:600; }
+  td { padding:12px 16px; font-size:13px; border-bottom:1px solid #fce4ec;
+    vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:#fff8f8; }
+  .badge-lexico    { background:#fff3e0;color:#e65100;padding:2px 10px;
+    border-radius:12px;font-size:11px;font-weight:700; }
+  .badge-sintactico{ background:#fce4ec;color:#c62828;padding:2px 10px;
+    border-radius:12px;font-size:11px;font-weight:700; }
+  .lexema { font-family:monospace; background:#f5f5f5;
+    padding:2px 6px; border-radius:4px; font-size:12px; }
+  .pos { color:#546e7a; font-size:12px; white-space:nowrap; }
+  .no-errors { text-align:center; padding:60px; color:#43a047; }
+  .no-errors .icon { font-size:48px; margin-bottom:12px; }
+  .no-errors p { font-size:16px; font-weight:600; }
+
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="logo">TaskScript</div>
+    <div class="subtitle">Analizador Léxico y Sintáctico · USAC LFP 2026</div>
+  </div>
+</header>
+<nav class="nav-pills">
+  <a href="reporte1_kanban.html">📋 Tablero Kanban</a>
+  <a href="reporte2_responsables.html">👥 Carga por Responsable</a>
+  <a href="reporte3_errores.html">⚠️ Tabla de Errores</a>
+</nav>
+<main>
+<h1>⚠️ Tabla de Errores</h1>
+<p class='page-desc'>Errores léxicos y sintácticos detectados al analizar el archivo <strong>Prueba Error Lexico</strong>.</p>
+<div class='summary'>
+<div class='chip chip-ok'>✅ Total: 2 error(es)</div>
+<div class='chip chip-lex'>🟠 Léxicos: 1</div>
+<div class='chip chip-syn'>🔴 Sintácticos: 1</div>
+</div>
+<table>
+<thead><tr><th>No.</th><th>Lexema</th><th>Tipo</th><th>Descripción</th><th>Línea</th><th>Col</th></tr></thead>
+<tbody>
+<tr>
+  <td style='font-weight:700;color:#546e7a'>1</td>
+  <td><span class='lexema'>@</span></td>
+  <td><span class='badge-lexico'>Lexico</span></td>
+  <td>Caracter no reconocido '@'.</td>
+  <td class='pos'>5</td>
+  <td class='pos'>5</td>
+</tr>
+<tr>
+  <td style='font-weight:700;color:#546e7a'>2</td>
+  <td><span class='lexema'>@</span></td>
+  <td><span class='badge-sintactico'>Sintactico</span></td>
+  <td>Se esperaba '}' para cerrar el bloque TABLERO. Se encontro: '@'.</td>
+  <td class='pos'>5</td>
+  <td class='pos'>5</td>
+</tr>
+</tbody></table>
+</main>
+<footer style="text-align:center;padding:16px;color:#90a4ae;font-size:12px;
+  border-top:1px solid #e0e0e0;background:#fff;margin-top:40px;">
+  Generado por TaskScript Analyzer &nbsp;·&nbsp; 2026-05-04 23:34:41
+</footer>
+</body></html>

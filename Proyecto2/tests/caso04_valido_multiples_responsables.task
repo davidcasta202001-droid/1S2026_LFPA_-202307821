@@ -1,0 +1,9 @@
+TABLERO "Equipo Grande" {
+    COLUMNA "Backlog" {
+        tarea: "Feature A" [prioridad: ALTA, responsable: "Rosa", fecha_limite: 2026-07-01],
+        tarea: "Feature B" [prioridad: ALTA, responsable: "Miguel", fecha_limite: 2026-07-02],
+        tarea: "Feature C" [prioridad: MEDIA, responsable: "Sofia", fecha_limite: 2026-07-03],
+        tarea: "Feature D" [prioridad: MEDIA, responsable: "Rosa", fecha_limite: 2026-07-04],
+        tarea: "Feature E" [prioridad: BAJA, responsable: "Miguel", fecha_limite: 2026-07-05]
+    };
+};

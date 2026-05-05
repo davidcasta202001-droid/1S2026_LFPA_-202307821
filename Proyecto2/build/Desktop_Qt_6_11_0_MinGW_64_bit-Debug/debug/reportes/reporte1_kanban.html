@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte 1 — Tablero Kanban | Prueba Error Lexico</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  header .logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #4fc3f7;
+  }
+  header .subtitle { font-size: 13px; color: #90caf9; margin-top: 2px; }
+  .nav-pills {
+    display: flex; gap: 8px; margin: 0 40px; padding: 16px 0;
+  }
+  .nav-pills a {
+    text-decoration: none; padding: 6px 16px; border-radius: 20px;
+    background: #e3f2fd; color: #1565c0; font-size: 13px; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .nav-pills a:hover, .nav-pills a.active {
+    background: #1565c0; color: #fff;
+  }
+  main { padding: 24px 40px 60px; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+  .page-desc { color: #546e7a; font-size: 14px; margin-bottom: 24px; }
+
+  .kanban-header {
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .tablero-badge {
+    background: #1565c0; color: #fff;
+    padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 600;
+  }
+  .board {
+    display: flex; gap: 20px; overflow-x: auto; padding-bottom: 16px;
+    align-items: flex-start;
+  }
+  .column {
+    background: #e8edf2;
+    border-radius: 12px;
+    min-width: 280px;
+    max-width: 320px;
+    flex-shrink: 0;
+    padding: 0 0 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .column-header {
+    background: #1a237e;
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 12px 12px 0 0;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .col-count {
+    background: rgba(255,255,255,0.25);
+    border-radius: 12px; padding: 2px 8px; font-size: 12px;
+  }
+  .card {
+    margin: 10px 10px 0;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid transparent;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .card.alta  { border-left-color: #e53935; background: #fff5f5; }
+  .card.media { border-left-color: #f9a825; background: #fffde7; }
+  .card.baja  { border-left-color: #43a047; background: #f1f8e9; }
+  .card-title { font-weight: 700; font-size: 14px; margin-bottom: 10px; color: #1a1a2e; }
+  .card-meta  { font-size: 12px; color: #546e7a; margin-top: 4px; }
+  .card-meta span { margin-right: 8px; }
+  .empty-col  { color: #90a4ae; font-size: 13px; text-align: center; padding: 20px 10px; }
+  .stats-bar  { display:flex; gap:16px; margin-bottom:24px; flex-wrap:wrap; }
+  .stat-chip  {
+    background:#fff; border-radius:10px; padding:10px 20px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.08); text-align:center;
+  }
+  .stat-chip .num { font-size:24px; font-weight:800; color:#1565c0; }
+  .stat-chip .lbl { font-size:11px; color:#90a4ae; }
+
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="logo">TaskScript</div>
+    <div class="subtitle">Analizador Léxico y Sintáctico · USAC LFP 2026</div>
+  </div>
+</header>
+<nav class="nav-pills">
+  <a href="reporte1_kanban.html">📋 Tablero Kanban</a>
+  <a href="reporte2_responsables.html">👥 Carga por Responsable</a>
+  <a href="reporte3_errores.html">⚠️ Tabla de Errores</a>
+</nav>
+<main>
+<h1>📋 Tablero Kanban</h1>
+<p class='page-desc'>Vista visual del tablero <strong>Prueba Error Lexico</strong> con sus columnas y tarjetas de tarea.</p>
+<div class='stats-bar'>
+  <div class='stat-chip'><div class='num'>1</div><div class='lbl'>Columnas</div></div>
+  <div class='stat-chip'><div class='num'>1</div><div class='lbl'>Tareas totales</div></div>
+  <div class='stat-chip'><div class='num' style='color:#e53935'>1</div><div class='lbl'>Prioridad ALTA</div></div>
+  <div class='stat-chip'><div class='num' style='color:#f9a825'>0</div><div class='lbl'>Prioridad MEDIA</div></div>
+  <div class='stat-chip'><div class='num' style='color:#43a047'>0</div><div class='lbl'>Prioridad BAJA</div></div>
+</div>
+<div class='board'>
+<div class='column'>
+  <div class='column-header'>Col1<span class='col-count'>1</span></div>
+  <div class='card alta'>
+    <div class='card-title'>Tarea valida</div>
+    <div><span style='background:#e53935;color:#fff;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:0.5px;'>ALTA</span></div>
+    <div class='card-meta'><span>👤 Ana</span><span>📅 2026-05-01</span></div>
+  </div>
+</div>
+</div>
+</main>
+<footer style="text-align:center;padding:16px;color:#90a4ae;font-size:12px;
+  border-top:1px solid #e0e0e0;background:#fff;margin-top:40px;">
+  Generado por TaskScript Analyzer &nbsp;·&nbsp; 2026-05-04 23:34:41
+</footer>
+</body></html>

@@ -1,0 +1,7 @@
+TABLERO "Prueba Prioridades" {
+    COLUMNA "Mixta" {
+        tarea: "Tarea alta" [prioridad: ALTA, responsable: "Luis", fecha_limite: 2026-06-01],
+        tarea: "Tarea media" [prioridad: MEDIA, responsable: "Luis", fecha_limite: 2026-06-15],
+        tarea: "Tarea baja" [prioridad: BAJA, responsable: "Luis", fecha_limite: 2026-06-30]
+    };
+};

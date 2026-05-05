@@ -1,0 +1,5 @@
+TABLERO "Fecha Invalida" {
+    COLUMNA "Col1" {
+        tarea: "Tarea" [prioridad: ALTA, responsable: "Ana", fecha_limite: 2026-5-1]
+    };
+};

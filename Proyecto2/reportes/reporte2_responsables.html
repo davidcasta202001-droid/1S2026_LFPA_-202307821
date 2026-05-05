@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte 2 — Carga por Responsable</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  header .logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #4fc3f7;
+  }
+  header .subtitle { font-size: 13px; color: #90caf9; margin-top: 2px; }
+  .nav-pills {
+    display: flex; gap: 8px; margin: 0 40px; padding: 16px 0;
+  }
+  .nav-pills a {
+    text-decoration: none; padding: 6px 16px; border-radius: 20px;
+    background: #e3f2fd; color: #1565c0; font-size: 13px; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .nav-pills a:hover, .nav-pills a.active {
+    background: #1565c0; color: #fff;
+  }
+  main { padding: 24px 40px 60px; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #1a1a2e; }
+  .page-desc { color: #546e7a; font-size: 14px; margin-bottom: 24px; }
+
+  table { width:100%; border-collapse:collapse; background:#fff;
+    border-radius:12px; overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+  thead { background:#1a237e; color:#fff; }
+  th { padding:14px 16px; text-align:left; font-size:13px; font-weight:600; }
+  td { padding:14px 16px; font-size:14px; border-bottom:1px solid #f0f0f0; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:#f5f9ff; }
+  .resp-name { font-weight:700; color:#1a1a2e; display:flex; align-items:center; gap:8px; }
+  .avatar {
+    width:34px; height:34px; border-radius:50%;
+    background:linear-gradient(135deg,#1565c0,#42a5f5);
+    color:#fff; font-weight:700; font-size:14px;
+    display:inline-flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .bar-wrap { background:#e8edf2; border-radius:8px; height:12px; min-width:120px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:8px;
+    background:linear-gradient(90deg,#1565c0,#42a5f5); transition:width 0.3s; }
+  .pct-lbl { font-size:12px; color:#546e7a; margin-left:8px; white-space:nowrap; }
+  .badge-num {
+    display:inline-block; min-width:28px; text-align:center;
+    border-radius:6px; padding:2px 8px; font-weight:700; font-size:13px;
+  }
+  .ba { background:#ffe0e0; color:#c62828; }
+  .bm { background:#fff8e1; color:#f57f17; }
+  .bb { background:#e8f5e9; color:#2e7d32; }
+  .bt { background:#e3f2fd; color:#1565c0; }
+
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="logo">TaskScript</div>
+    <div class="subtitle">Analizador Léxico y Sintáctico · USAC LFP 2026</div>
+  </div>
+</header>
+<nav class="nav-pills">
+  <a href="reporte1_kanban.html">📋 Tablero Kanban</a>
+  <a href="reporte2_responsables.html">👥 Carga por Responsable</a>
+  <a href="reporte3_errores.html">⚠️ Tabla de Errores</a>
+</nav>
+<main>
+<h1>👥 Carga por Responsable</h1>
+<p class='page-desc'>Distribución de tareas por persona en el tablero <strong>Proyecto Minimo</strong>. Total de tareas: <strong>1</strong>.</p>
+<table>
+<thead><tr><th>Responsable</th><th>Total</th><th>🔴 ALTA</th><th>🟡 MEDIA</th><th>🟢 BAJA</th><th>Distribución (%)</th></tr></thead>
+<tbody>
+<tr>
+  <td><div class='resp-name'><span class='avatar'>A</span>Ana</div></td>
+  <td><span class='badge-num bt'>1</span></td>
+  <td><span class='badge-num ba'>1</span></td>
+  <td><span class='badge-num bm'>0</span></td>
+  <td><span class='badge-num bb'>0</span></td>
+  <td style='display:flex;align-items:center;'><div class='bar-wrap'><div class='bar-fill' style='width:100.0%'></div></div><span class='pct-lbl'>100.0%</span></td>
+</tr>
+</tbody></table>
+</main>
+<footer style="text-align:center;padding:16px;color:#90a4ae;font-size:12px;
+  border-top:1px solid #e0e0e0;background:#fff;margin-top:40px;">
+  Generado por TaskScript Analyzer &nbsp;·&nbsp; 2026-05-03 21:33:41
+</footer>
+</body></html>

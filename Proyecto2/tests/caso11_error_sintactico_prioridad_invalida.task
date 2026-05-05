@@ -1,0 +1,5 @@
+TABLERO "Prioridad Invalida" {
+    COLUMNA "Col1" {
+        tarea: "Tarea" [prioridad: URGENTE, responsable: "Ana", fecha_limite: 2026-05-01]
+    };
+};
